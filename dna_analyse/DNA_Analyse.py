@@ -35,9 +35,9 @@ def hole_dna_sequenz():
         #  -> Listen 
         # Wenn nicht: Fehlermeldung ausgeben und loop abbrechen 
         
-        if sequence[x] in gueltige_nukleotide: 
-            
+        try:
             while True: 
+                sequence[x] in gueltige_nukleotide 
             
                 if sequence[x] == gueltige_nukleotide[3]:
                     l_g.append('G')
@@ -48,7 +48,7 @@ def hole_dna_sequenz():
                 elif sequence[x] == gueltige_nukleotide[2]:
                     l_c.append ('C')
                 else: 
-                    break
+                    sequence[x] + 2
             # hier inneren loop abbrechen und äußeren wiederholen.
             # aber nur bei dieser else Bedingung
             # nicht, wenn der while-loop aus anderen Gründen abgebrochen wird
@@ -61,9 +61,9 @@ def hole_dna_sequenz():
                     continue
                     
                 
-        else:            
+        except TypeError:             
             print()
-            print('Bei der Eingabe handelt es sich' 
+            print('Bei der Eingabe handelt es sich ' 
                   'nicht um eine gültige DNA-Sequenz!')
             print()
             print()
@@ -91,7 +91,7 @@ print('T               ' , len(l_t))
 print('C               ' , len(l_c))
 print()
 print('% CG-Gehalt:' , 
-      len(l_g)+len(l_c)/(len(l_g)+len(l_c)+len(l_t)+len(l_a))*100)
+      ((len(l_g)+len(l_c))*100)/(len(l_g)+len(l_c)+len(l_t)+len(l_a)))
 print()
 print('Molekulargewicht:' , 
       (mw_g*len(l_g)+mw_a*len(l_a)+mw_t*len(l_t)+mw_c*len(l_c)+mw_oh)/1000 , 
