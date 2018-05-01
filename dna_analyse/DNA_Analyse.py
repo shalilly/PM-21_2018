@@ -48,7 +48,7 @@ def hole_dna_sequenz():
                 elif sequence[x] == gueltige_nukleotide[2]:
                     l_c.append ('C')
                 else: 
-                    
+                    break
             # hier inneren loop abbrechen und äußeren wiederholen.
             # aber nur bei dieser else Bedingung
             # nicht, wenn der while-loop aus anderen Gründen abgebrochen wird
