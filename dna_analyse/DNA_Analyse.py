@@ -47,12 +47,12 @@ def hole_dna_sequenz():
                     l_t.append('T')
                 elif sequence[x] == gueltige_nukleotide[2]:
                     l_c.append ('C')
+                    
+                # Feher kreieren, wenn Buchstabe keine Base,
+                # sodass except part benutzt wird 
                 else: 
                     sequence[x] + 2
-            # hier inneren loop abbrechen und äußeren wiederholen.
-            # aber nur bei dieser else Bedingung
-            # nicht, wenn der while-loop aus anderen Gründen abgebrochen wird
-            # nur wieeeeeeee ???????????????????????????? ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+         
             
                 x = x + 1 
                 if x == len(sequence):
