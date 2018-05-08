@@ -56,13 +56,16 @@ def total_after(square):
             elif 1 <= square <= 64:
                 
                 while True: 
-                    amount_grains = 2 ** (square - 1)
-                    square = square + 1
-                    
-                    if square <= 64: 
-                        amount_grains = amount_grains + 2 ** (square - 1)
-                        square = square + 1 
-                        continue 
+                    #list for continous counting 
+                    amount_grains = 0 
+                
+                    while True: 
+                                       
+                        if square <= 64: 
+                            amount_square = 2 ** (square - 1)
+                            amount_grains = amount_grains + amount_square
+                            square = square + 1 
+                            continue 
                         
                     elif square > 64: 
                         break
