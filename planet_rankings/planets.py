@@ -56,46 +56,49 @@ solar_data = [
 # Here are the functions you need to implement to make things work.
 
 def get_user_selection(options):
-    
-    #a list of options to choose from 
-    properties = (0,1,2,3,4,5)
-     
-    print(' 0 - Name')
-    print(' 1 - Diameter')
-    print(' 2 - Mass')
-    print(' 3 - Distance')
-    print(' 4 - Eccentricity')
-    print(' 5 - Moons')
-    
-    #ask and check for valid input and deal with the rest
-    while True: 
-        global x
-        try:
-            x = int(input('Auswahl: '))
-            if x in properties: 
-                return(x)
-            else:
-                print(' Please select one of the options given above.')
-                continue 
-        except ValueError:
-            print(' Please select one of the options given above.')
-            continue
+    """Present the user with options to choose from and return the selection.
+
+    Prints a "Number - Option" line for every option in options.
+    Asks the user to select an option by typing in its number.
+    Checks that the input represents a valid selection and returns it.
+    """
+
+    pass    # implement the function so that it mentions the docstring here
+
 
 def sorted_on_attribute(data, sort_row):
-    
-    #connect user selection with corresponding list 
-    #selection = list to zip and sort
-    
-    selection = solar_data[x] 
-     
-    output_list = zip (planets, selection)
-    sorted_list = sorted (output_list, key = lambda x: x[1]) 
-    
-    print()
-    print('Planets sorted by:', properties[x])
-    return(sorted_list)
+    """Return sorted (item, attribute) pairs from a larger data table.
 
+    Expects a data table in the form of a sequence, in which the first
+    element is a sequence of item names, and the following elements are
+    sequences of values describing one property of the items each.
+    sort_row indicates the index in the outer sequence that holds the
+    property to sort on. If sort_row is 0, the items are sorted by their
+    name and (item name, item name) tuples are returned.
 
+    Example:
+
+    >>> data = [
+        ('S.cerevisiae', 'C.elegans', 'H.sapiens', 'E.coli'),  # organisms
+        (12156677, 101169000, 3234830000, 4639221),    # haploid genome size
+        (16, 6, 23, 1)    # number of chromosomes in the haploid set
+        ]
+    >>> sorted_on_attribute(data, 2)
+    [('E.coli', 1), ('C.elegans', 6), ('S.cerevisiae', 16), ('H.sapiens', 23)]
+    
+    """
+
+    pass    # implement the function so that it mentions the docstring here
+    # Hint: you may want to
+    # - zip together the data elements you are interested in
+    # - pass the result to sort
+    # - loop over the resulting list building up a new list with swapped
+    #   elements or
+    # - use an appropriate lambda `key` function during sorting
+    # This is definitely non-trivial so don't despair if you can't figure it
+    # out, but try!
+
+    
 if __name__ == '__main__':
     # Here is the main program, which should just work fine if
     # the above two functions are implemented correctly.
